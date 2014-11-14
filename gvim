@@ -1,0 +1,10 @@
+#!/bin/bash
+
+this=$(basename $0); # vim|gvim|rvim etc ..
+desktop=desktop_$(xprop -root -notype _NET_CURRENT_DESKTOP | perl -pe 's/.*?= (\d+)/$1/')
+
+if [ $# != 0 ]; then
+	exec /usr/bin/$this --servername $desktop --remote-tab-silent "$@"
+elif ! vim --serverlist | grep -iq $desktop; then
+	exec /usr/bin/$this --servername $desktop
+fi
