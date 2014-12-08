@@ -51,6 +51,30 @@ function Align()
     let keyword = InputChar()
     execute ':Tab /' . keyword
 endfunction
+
+" A wrapper function to restore the cursor position, window position,
+" and last search after running a command.
+function! Preserve(command)
+    " Save the last search
+    let last_search=@/
+    " Save the current cursor position
+    let save_cursor = getpos(".")
+    " Save the window position
+    normal H
+    let save_window = getpos(".")
+    call setpos('.', save_cursor)
+
+    " Do the business:
+    execute a:command
+
+    " Restore the last_search
+    let @/=last_search
+    " Restore the window position
+    call setpos('.', save_window)
+    normal zt
+    " Restore the cursor position
+    call setpos('.', save_cursor)
+endfunction
 "" Maps
 
 let mapleader= ','
@@ -65,4 +89,4 @@ map <Leader>h :noh<cr>
 map <Leader>n :NERDTreeToggle<CR>
 
 " Tabularize
-map <Leader>a :exe Align()<CR>
+map <Leader>a :exe Preserve(Align())<CR>
