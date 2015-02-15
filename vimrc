@@ -38,6 +38,9 @@ set hlsearch
 set ignorecase
 set smartcase
 
+" GUI
+set guioptions-=T
+
 "" Functions
 
 " Gets a char from user command line
@@ -90,3 +93,6 @@ map <Leader>n :NERDTreeToggle<CR>
 
 " Tabularize
 map <Leader>a :exe Preserve(Align())<CR>
+
+" YCM completion conf file
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
