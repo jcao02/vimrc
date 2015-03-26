@@ -10,8 +10,6 @@ function Preserve(command)
 
     let @/=_s
     :call cursor(l, c)
-
-    echo $HOME
 endfunction
 
 " Gets a char from user command line
@@ -20,6 +18,7 @@ function InputChar()
     return type(c) == type(0) ? nr2char(c) : c
 endfunction
 
+" Helper function for Align
 function _Align()
     let keyword = InputChar()
     execute ':Tab /' . keyword

@@ -12,4 +12,4 @@ map <Leader>h :noh<cr>
 map <Leader>n :NERDTreeToggle<CR>
 
 " Tabularize
-map <Leader>a :exe Align()<CR>
+map <Leader>a :call Align()<CR>
