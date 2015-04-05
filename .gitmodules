@@ -22,3 +22,12 @@
 [submodule "bundle/vim-surround"]
 	path = bundle/vim-surround
 	url = git@github.com:tpope/vim-surround.git
+[submodule "bundle/fancy-todo-vim"]
+	path = bundle/fancy-todo-vim
+	url = git@github.com:jcao02/fancy-todo-vim.git
+[submodule "bundle/vim-startify"]
+	path = bundle/vim-startify
+	url = git@github.com:mhinz/vim-startify.git
+[submodule "bundle/todo-list-vim"]
+	path = bundle/todo-list-vim
+	url = git@github.com:jcao02/todo-list-vim.git

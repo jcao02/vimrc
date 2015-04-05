@@ -53,5 +53,4 @@ source $HOME/.vim/src/functions.vim
 source $HOME/.vim/src/maps.vim
 
 " YCM completion conf file
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/
-            \ YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
